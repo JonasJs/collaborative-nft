@@ -1,23 +1,34 @@
-import Link from 'next/link'
+import React, { useEffect, useRef } from 'react';
+
+// Components
 import Layout from '../components/Layout';
+import { Grid } from '../components/Grid';
 
-import styles from "../styles/pages/Home.module.css";
+// Styles
+import styles from '../styles/pages/Home.module.scss'
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
+function Home() {
 
-    <div className={styles.artBoard}>
-      <div id="canvas-container">
-        <table id="pixel-canvas"></table>
+  return (
+    <Layout title="Home | Next.js + TypeScript Example">
+      <div className={styles.container}>
+
+        {/* <Grid /> */}
+      
+      {/* 
+        <canvas className={styles.canvas} ref={canvasRef}/>
+        <div className={styles.artBoard}>
+          <div id="canvas-container">
+            <table id="pixel-canvas">
+              
+            </table>
+          </div>
+        </div> */}
+      
+      
       </div>
-    </div>
-  </Layout>
-)
+    </Layout>
+  )
+}
 
-export default IndexPage
+export default Home
