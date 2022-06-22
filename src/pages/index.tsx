@@ -26,7 +26,7 @@ function Home() {
     setCurrentPosition(position);
   }
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
+    <Layout title="Home | Collaborative NFT">
       <div className={styles.container}>
         <h1>Collaborative NFT</h1>
         <Grid
