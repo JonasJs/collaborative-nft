@@ -2,23 +2,36 @@
 // Styles
 import styles from "../styles/components/Pixel.module.css";
 
-interface IPixel {
+export interface IPixel {
   position: number;
-  color?: string;
+  color?: string | never;
+  wallet?: string;
+  id?: string;
+  onMouseDown?: (position: number, event: any) => void;
+  onMouseOver?: (position: number, event: any) => void;
 }
 
 export function Pixel({
   position,
-  color = "#000"
+  color = "#000",
+  onMouseDown,
+  onMouseOver,
 }: IPixel) {
 
   const pixelCustomStyle = {
     backgroundColor: color,
   }
+
   return (
     <div
       className={styles.pixel}
       style={pixelCustomStyle}
-    ></div>
+      onMouseDown={event => onMouseDown && onMouseDown(position, event)}
+      onMouseOver={event => onMouseOver && onMouseOver(position, event)}
+      onFocus={event => onMouseOver && onMouseOver(position, event)}
+      onTouchStart={event => onMouseDown && onMouseDown(position, event)}
+    >
+      {/* <h1 style={{color: "#fff", fontSize: "10px"}}>{position}</h1> */}
+    </div>
   )
 }
