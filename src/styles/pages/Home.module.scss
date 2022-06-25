@@ -1,4 +1,18 @@
 
 .container {
   text-align: center;
+  color: #fff;
+}
+
+.colorPalette {
+  width: 400px;
+  display: flex;
+  margin: 24px auto;
+
+  border-radius: 20px;
+  border: 2px solid #fff;
+  background: #fff;
+  
+  overflow: hidden;
+
 }
