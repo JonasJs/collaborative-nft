@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { SketchPicker } from "react-color";
+import { ChromePicker } from "react-color";
 
-
+// Contexts
+import { useApp } from '../context/AppContext';
 
 // Components
 import Layout from '../components/Layout';
@@ -15,7 +16,7 @@ function Home() {
   const [currentPosition, setCurrentPosition] = useState(0);
   const [pixels, setPixels] = useState<any>([]);
 
-  const [colorSelected, setColorSelected] = useState<any>();
+  const { selectedColor, setSelectedColor } = useApp() as any;
 
 
   function handleMouseDown(position: number, event: any) {
@@ -24,7 +25,7 @@ function Home() {
       id: String(position),
       position: position,
       wallet: "111",
-      color: "red"
+      color: selectedColor?.hex,
     }]
     setPixels(newPixels)
   }
@@ -33,7 +34,7 @@ function Home() {
     setCurrentPosition(position);
   }
 
-  const handleColorChange = (color: any) => setColorSelected(color);
+  const handleColorChange = (color: any) => setSelectedColor(color);
  
   return (
     <Layout title="Home | Collaborative NFT">
@@ -46,17 +47,15 @@ function Home() {
           onMouseOver={handleMouseOver}
         />
         <div className={styles.colorPalette}>
-            <SketchPicker
-              color={colorSelected}
+            <ChromePicker
+              color={selectedColor}
               onChange={handleColorChange}
-              onSwatchHover={(color, e) => {
-                console.log("color", color);
-              }}
+              
             />
           
         </div>
         
-        <h1>Color: {colorSelected?.hex}</h1>
+        <h1>Color: {selectedColor?.hex}</h1>
         <h1>Position: {currentPosition}</h1>
       </div>
     </Layout>

@@ -6,13 +6,18 @@
 
 .colorPalette {
   width: 400px;
-  display: flex;
   margin: 24px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 
-  border-radius: 20px;
-  border: 2px solid #fff;
-  background: #fff;
+  // display: flex;
+  // margin: 24px auto;
+
+  // border-radius: 20px;
+  // border: 2px solid #fff;
+  // background: #fff;
   
-  overflow: hidden;
+  // overflow: hidden;
 
 }
