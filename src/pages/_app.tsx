@@ -11,8 +11,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     // <ChakraProvider theme={theme}>
       <MoralisProvider
-        serverUrl={process.env.NEXT_PUBLIC_MORALIS_APP_SERVER}
-        appId={process.env.NEXT_PUBLIC_MORALIS_APP_ID}
+        serverUrl={process.env.NEXT_PUBLIC_MORALIS_APP_SERVER ?? "ServerUrl Undefined Fallback"}
+        appId={process.env.NEXT_PUBLIC_MORALIS_APP_ID ?? "AppId Undefined Fallback"}
       >
         <AppProvider>
           <Component {...pageProps} />
