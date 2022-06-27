@@ -52,12 +52,12 @@ function AppProvider({children}: any) {
     }
   }
 
-  useEffect(() => {
-    if(isAuthenticated) {
-      console.log(user.attributes.accounts)
-    }
+  // useEffect(() => {
+  //   if(isAuthenticated) {
+  //     console.log(user.attributes.accounts)
+  //   }
    
-  }, [isAuthenticated])
+  // }, [isAuthenticated])
   return (
     <AppContext.Provider
       value={{
