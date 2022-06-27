@@ -1,6 +1,7 @@
 .grid {
   display: inline-grid;
   grid-template-columns: repeat(10, 30px);
+  border: solid 2px #1e0d49;
   grid-gap: 1px;
-  border: solid 2px red;
+  background: #eee;
 }
