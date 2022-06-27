@@ -26,7 +26,7 @@ export function Grid({pixels = [], onMouseDown, onMouseOver}: IGrid) {
 
   
   useEffect(() => {
-    console.log(pixels)
+
     const allPixes = lodash.unionBy(pixels, gridDefault, "position");
     const gridOrder = allPixes.sort((a: IPixel, b: IPixel) => a.position - b.position);
     
@@ -39,7 +39,7 @@ export function Grid({pixels = [], onMouseDown, onMouseOver}: IGrid) {
       {grid.map((item: IPixel) => (
         <Pixel
           key={item.position}
-            color={item?.color || "#000"}
+            color={item?.color || "#fff"}
             position={item.position}
             onMouseOver={onMouseOver}
             onMouseDown={onMouseDown}

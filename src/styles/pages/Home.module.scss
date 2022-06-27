@@ -2,22 +2,23 @@
 .container {
   text-align: center;
   color: #fff;
+
+  padding-top: 48px;
 }
 
-.colorPalette {
-  width: 400px;
-  margin: 24px auto;
-  text-align: center;
+.gridContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 32px;
+  align-items: center;
   display: flex;
-  justify-content: center;
+  transform: translate(40px, 0px);
+}
 
-  // display: flex;
-  // margin: 24px auto;
-
-  // border-radius: 20px;
-  // border: 2px solid #fff;
-  // background: #fff;
-  
-  // overflow: hidden;
-
+@media (max-width: 900px){
+  .gridContainer {
+    flex-direction: column;
+    transform: initial;
+  }
 }

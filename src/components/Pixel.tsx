@@ -13,7 +13,7 @@ export interface IPixel {
 
 export function Pixel({
   position,
-  color = "#000",
+  color = "#fff",
   onMouseDown,
   onMouseOver,
 }: IPixel) {
