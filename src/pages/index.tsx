@@ -7,7 +7,6 @@ import { useApp } from '../context/AppContext';
 // Components
 import Layout from '../components/Layout';
 import { Grid } from '../components/Grid';
-// import { Color } from '../components/Color';
 
 // Styles
 import styles from '../styles/pages/Home.module.scss'
